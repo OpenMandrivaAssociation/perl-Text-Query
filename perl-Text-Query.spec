@@ -15,6 +15,7 @@ Url:		http://search.cpan.org/dist/%{module}
 BuildRequires:	perl-devel
 %endif
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module provides an object that matches a data source against a query
