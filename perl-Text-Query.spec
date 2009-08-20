@@ -1,19 +1,15 @@
-%define module	Text-Query
-%define name	perl-%{module}
-%define version 0.07
-%define release %mkrel 5
+%define upstream_name       Text-Query
+%define upstream_version    0.07
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 6
 Summary:	Query processing framework
 License:	GPL or Artistic
 Group:		Development/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Text/%{module}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{module}
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%endif
+Source:     http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
+Patch:      Text-Query-0.07-fix-syntax.patch
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
@@ -22,7 +18,8 @@ This module provides an object that matches a data source against a query
 expression.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version} 
+%patch -p 1
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
