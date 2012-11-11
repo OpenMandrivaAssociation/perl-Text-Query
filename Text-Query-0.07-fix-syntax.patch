@@ -1,0 +1,12 @@
+diff -Naur --exclude '*~' Text-Query-0.07/lib/Text/Query/SolveSimpleString.pm Text-Query-0.07-fix-syntax/lib/Text/Query/SolveSimpleString.pm
+--- Text-Query-0.07/lib/Text/Query/SolveSimpleString.pm	1999-06-20 01:00:22.000000000 +0200
++++ Text-Query-0.07-fix-syntax/lib/Text/Query/SolveSimpleString.pm	2009-08-20 09:39:31.000000000 +0200
+@@ -49,7 +49,7 @@
+   } else {
+     @ra = map { [ $_, $self->matchscalar($expr, $_) ] } @$pa;
+   }
+-  @ra = sort { $b->[$#{@$b}] <=> $a->[$#{@$a}] } @ra;
++  @ra = sort { $b->[-1] <=> $a->[-1] } @ra;
+   return wantarray ? @ra : \@ra;
+ }
+ 
