@@ -9,7 +9,6 @@ License:	GPL or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source:		http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
-Patch:		Text-Query-0.07-fix-syntax.patch
 
 BuildRequires:	perl-devel
 BuildArch:	noarch
@@ -20,7 +19,6 @@ expression.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version} 
-%patch -p 1
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
