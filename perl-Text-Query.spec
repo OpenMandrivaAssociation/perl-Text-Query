@@ -2,13 +2,13 @@
 %define upstream_version 0.09
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Version:	%{upstream_version}
+Release:	3
 Summary:	Query processing framework
 License:	GPL or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source:		http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/Text-Query
+Source:		https://cpan.metacpan.org/authors/id/J/JO/JONJ/Text-Query-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
